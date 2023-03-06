@@ -1,5 +1,6 @@
 <script setup>
 import Menu from './Menu.vue'
+import Admin from './Admin.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import Menu from './Menu.vue'
         <h2>Feeling hungry?</h2>
         <button>Let's order!</button>
         <Menu />
+        <Admin />
       </div>
     </div>
   </div>

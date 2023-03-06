@@ -41,6 +41,20 @@ function addToCart(pizza, pizzaOption) {
     quantity: 1
   })
 }
+function incrementQuantity(item) {
+  item.quantity++
+}
+function decreaseQuantity(item) {
+  item.quantity--
+  if (item.quantity === 0) {
+    this.removeItemFromCart(item)
+  }
+}
+
+function removeItemFromCart(item) {
+  this.cart.splice(this.cart.indexOf(item), 1)
+}
+
 </script>
 
 <template>
@@ -79,11 +93,12 @@ function addToCart(pizza, pizzaOption) {
         <tbody v-for="item in cart">
           <tr>
             <td>
-              <button><span>-</span></button>
-              <button><span>+</span></button>
+              <button @click="decreaseQuantity(item)"><span>-</span></button>
+              <span>{{ item.quantity }}</span>
+              <button @click="incrementQuantity(item)"><span>+</span></button>
             </td>
             <td>{{ item.name }} - {{ item.size }}</td>
-            <td>{{ item.price }}</td>
+            <td>{{ item.price * item.quantity }}</td>
           </tr>
 
         </tbody>
