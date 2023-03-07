@@ -18,7 +18,7 @@ function addMenuItem() {
 }
 </script>
 <template>
-  <div>
+  <div id="form">
     <h3>Add new Pizza:</h3>
     <form>
       <div>
@@ -47,7 +47,7 @@ function addMenuItem() {
         <input type="text" name="price2" v-model="newPizza.options[1].price">
       </div>
 
-      <button type="button" @click="addMenuItem">Add</button>
+      <button class="button" type="button" @click="addMenuItem">Add Item</button>
     </form>
   </div>
 </template>

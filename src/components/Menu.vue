@@ -76,7 +76,12 @@ function removeItemFromCart(item) {
             <td>{{ option.size }}"</td>
             <td>{{ option.price }}</td>
             <td>
-              <button type="button" @click="addToCart(pizza, option)">+</button>
+              <button class="button" type="button" @click="addToCart(pizza, option)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="icon-default-size">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
             </td>
           </tr>
         </tbody>
@@ -93,9 +98,21 @@ function removeItemFromCart(item) {
         <tbody v-for="item in cart">
           <tr>
             <td>
-              <button @click="decreaseQuantity(item)"><span>-</span></button>
-              <span>{{ item.quantity }}</span>
-              <button @click="incrementQuantity(item)"><span>+</span></button>
+              <button class="button" @click="decreaseQuantity(item)"><span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="icon-default-size">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                  </svg>
+                </span>
+              </button>
+              <span class="quantity-number">{{ item.quantity }}</span>
+              <button class="button" @click="incrementQuantity(item)"><span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="icon-default-size">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                  </svg>
+                </span>
+              </button>
             </td>
             <td>{{ item.name }} - {{ item.size }}</td>
             <td>{{ item.price * item.quantity }}</td>

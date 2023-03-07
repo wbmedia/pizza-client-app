@@ -2,8 +2,10 @@
 <template>
   <header>
     <nav>
-      <a>PIZZA PLANET</a>
       <ul>
+        <li>
+          <h1>PIZZA PLANET</h1>
+        </li>
         <li>
           <a href="">Home</a>
         </li>
